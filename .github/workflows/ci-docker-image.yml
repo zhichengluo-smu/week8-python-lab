@@ -11,7 +11,7 @@ on:
 env:
   # change this to your Docker Hub username and repository
   # example: donta/book_app_backend
-  DOCKER_IMAGE: <Docker Hub username/<your_Docker_repository>
+  DOCKER_IMAGE: zhichengluo/docker-lab-8
     
 jobs:
   test:
