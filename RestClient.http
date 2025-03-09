@@ -1,0 +1,140 @@
+### Get all books
+GET http://localhost:8000/books HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Get a book by ID
+GET http://localhost:8000/books/1 HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Add a new book
+POST http://localhost:8000/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Introduction to FastAPI",
+    "author": "John Doe",
+    "year": 2023,
+    "description": "A beginner's guide to building APIs with FastAPI."
+}
+
+###
+
+### Update a book by ID
+PUT http://localhost:8000/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Advanced FastAPI",
+    "author": "Jane Smith",
+    "year": 2024,
+    "description": "An advanced guide to FastAPI features."
+}
+
+###
+
+### Delete a book by ID
+DELETE http://localhost:8000/books/3 HTTP/1.1
+Content-Type: application/json
+
+
+### Get all reviews for a specific book
+GET http://localhost:8000/books/1/reviews HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Add a new review to a specific book
+POST http://localhost:8000/books/1/reviews HTTP/1.1
+Content-Type: application/json
+
+{
+    "review": "A wonderful and insightful read!"
+}
+
+###
+
+### Update an existing review for a specific book
+PUT http://localhost:8000/books/1/reviews/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "review": "An updated review: Even better upon a second read."
+}
+
+###
+
+### Delete a review for a specific book
+DELETE http://localhost:8000/books/1/reviews/16 HTTP/1.1
+Content-Type: application/json
+
+
+
+###
+
+### Get book introduction
+GET http://localhost:8000/ai/introduction/1 HTTP/1.1
+Content-Type: application/json
+
+### Add a book to ChromaDB
+POST http://localhost:8000/chroma/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "3",
+    "title": "The Art of FastAPI",
+    "description": "A comprehensive guide to building APIs with FastAPI and Python."
+}
+
+
+###
+
+### Search for similar books in ChromaDB
+GET http://localhost:8000/chroma/similarities?query=FastAPI&distance_threshold=1.0 HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Search for similar books with AI-generated summary
+GET http://localhost:8000/chroma/summary?query=FastAPI&distance_threshold=1.0 HTTP/1.1
+Content-Type: application/json
+
+###
+
+### Delete a book from ChromaDB
+DELETE http://localhost:8000/chroma/3 HTTP/1.1
+Content-Type: application/json
+
+
+### Add a new review to a specific book without login
+POST http://localhost:8000/books/1/reviews HTTP/1.1
+Content-Type: application/json
+
+{
+    "review": "A wonderful and insightful read!"
+}
+
+### Login a user
+POST http://localhost:8000/login?username=user1&password=UserPass123! HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+### Add a new review to a specific book with access token, replace the token after "Authorization: Bearer" with the token received from the login request
+POST http://localhost:8000/books/1/reviews HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJraWQiOiJ2M3FXVytNM2RUUWFPeXJLMVZTMlo2dDBYNkhMYVp6a0dIR2F6S3d6bnU4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4OTZhODU4Yy0xMDMxLTcwYjQtNWM4My0yZDMxZGI1MTgyNjIiLCJjb2duaXRvOmdyb3VwcyI6WyJVc2VycyJdLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTFfUVNybnRhQzZ0IiwiY2xpZW50X2lkIjoiMTk5cWoxMTZqam5lMnU5NW5rMmM1cWY0bzYiLCJvcmlnaW5fanRpIjoiNGRiMTdhYWMtYjQxZi00NTZhLTk0YzEtMWFkMDE1ZWYzMGM3IiwiZXZlbnRfaWQiOiIzMzA2NTRlZi0zMzk4LTQxODQtODM2Mi04Yjg3ZDQxNmIxNWQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzM3NDQwMzU5LCJleHAiOjE3Mzc0NDM5NTksImlhdCI6MTczNzQ0MDM1OSwianRpIjoiMTUwYTc0OTMtMWRjYS00MDc5LTljNDktYWZiYzg1N2QyZWI5IiwidXNlcm5hbWUiOiJ1c2VyMSJ9.T1C_nbUxfH1iK75D74j6XluWrbGhmgenB5wHzWzu1oJC_LbBVPDA-lSGC5cOffmJAJKJ2LgMUMVIiZVRfPeX8gR6Xsa78yXruWXjE2wRnQgLRQuUpIXBHeOUPov7VaRQRN1b7dC5S1_xLxFZcCF_nvf4Ms35W0U08Ok2LNio8TSSOxMKxH27TFcAs0H4GmWEIOrG-7oEonpEEi5kWal9v4pFpKWup1rneU0X4V2IVrLqdEgWZ3SOCfTy2e7Fqyk1uxr5wGsPv3wPmBpTWSYekRq2UyuiCZyiINJzi8Jn5qr_wXPHp7WOcJ0L6H19UIzUc_RdRAr584HEipVpXOH7IQ
+
+{
+    "review": "A wonderful and insightful read!"
+}
+
+
+
+
+
+
+
+
+
